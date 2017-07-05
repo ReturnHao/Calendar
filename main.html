@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1">
+        <title>Simple Calendar</title>
+
+        <!-- Set render engine for 360 browser -->
+        <meta name="renderer" content="webkit">
+
+        <!-- No Baidu Siteapp-->
+        <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+        <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+        <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+        <meta name="msapplication-TileColor" content="#0e90d2">
+
+        <link rel="stylesheet" href="assets/css/amazeui.min.css">
+        <link rel="stylesheet" href="assets/css/app.css">
+    </head>
+
+    <body>
+        <header class="am-topbar am-topbar-fixed-top">
+            <div class="am-container">
+                <h1 class="am-topbar-brand" id="Topbar_Title">
+                    <a class="Font_Optima" href="#">Calendar</a>
+                </h1>
+                <div class="am-topbar-form am-input-group am-datepicker-date am-u-lg-1" data-am-datepicker="{format: 'mm-dd-yyyy'}" id="Topbar_Date_Wrapper">
+                    <input type="text" class="am-form-field" id="Topbar_Date_Chooser" value="null" style="display: none">
+                    <span class="am-input-group-btn am-datepicker-add-on">
+                        <button class="am-btn am-btn-default" type="button">
+                            <span class="am-icon-calendar"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="am-topbar-form am-input-group am-input-group-primary am-u-lg-7" role="search">
+                    <input type="text" class="am-form-field" placeholder="Don't Search Here !">
+                    <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-primary" type="button">
+                            <span class="am-icon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </header>
+        <div class="Calendar_Wrapper am-g">
+            <div class="am-u-lg-9 Calendar_Body">
+                <ul class="am-avg-sm-4 Boxes_Wrapper" id="Year_Wrapper" style="display: block;">
+                    <li class="box" id="box-1" onclick="Fan_In(1, 'Year')">January</li>
+                    <li class="box" id="box-2" onclick="Fan_In(2, 'Year')">February</li>
+                    <li class="box" id="box-3" onclick="Fan_In(3, 'Year')">Mar</li>
+                    <li class="box" id="box-4" onclick="Fan_In(4, 'Year')">April</li>
+                    <li class="box" id="box-5" onclick="Fan_In(5, 'Year')">May</li>
+                    <li class="box" id="box-6" onclick="Fan_In(6, 'Year')">June</li>
+                    <li class="box" id="box-7" onclick="Fan_In(7, 'Year')">July</li>
+                    <li class="box" id="box-8" onclick="Fan_In(8, 'Year')">August</li>
+                    <li class="box" id="box-9" onclick="Fan_In(9, 'Year')">September</li>
+                    <li class="box" id="box-10" onclick="Fan_In(10, 'Year')">October</li>
+                    <li class="box" id="box-11" onclick="Fan_In(11, 'Year')">November</li>
+                    <li class="box" id="box-12" onclick="Fan_In(12, 'Year')">December</li>
+                </ul>
+                <div class="Font_Optima" id="Month_Container" style="display: none;" ondblclick="Fan_Out()">
+                    <div class="Month_Header"></div>
+                    <ul class="am-avg-sm-7" id="Month_Wrapper">
+                    </ul>
+                </div>
+            </div>
+            <div class="am-u-lg-3 Status_Body">
+                <p class="Font_Input Font_Optima" id="Cur_date"></p>
+
+                <div id="Events_List">
+                    <div class="am-u-lg-11 Font_Apple_Chancery am-icon-pencil-square-o" aria-hidden="true" id="Total_Event">
+                        Total&nbsp;Undo&nbsp;Events:&nbsp;&nbsp;0
+                    </div>
+                    <a class="am-u-lg-1 am-icon-paper-plane-o" aria-hidden="true" id="Submitter"></a>
+                </div>
+                <div class="am-tabs" data-am-tabs>
+                    <ul class="am-tabs-nav am-nav am-nav-tabs am-avg-lg-2" id="Tabs_Wrapper">
+                        <li class="am-active"><a class="Font_Apple_Chancery" href="#tab1">Info.</a></li>
+                        <li ><a class="Font_Apple_Chancery" href="#tab2">Event.</a></li>
+                    </ul>
+
+                    <div class="am-tabs-bd">
+                        <div class="am-tab-panel am-fade am-in am-active Font_Tsukushi_A_Round_Gothic" id="tab1">
+                            <p class="Info_Header">不被了解的怪人</p>
+                            <p class="Info_container">置身人群中<br>你只需要被淹没 享受 沉默<br>退到人群后<br>你只需给予双手 微笑 等候</p>
+                        </div>
+                        <div class="am-tab-panel am-fade Font_Tsukushi_A_Round_Gothic" id="tab2">
+                            <!--走在忠孝东路<br>徘徊在茫然中<br>在我的人生旅途<br>选择了多少错误<br>我在睡梦中惊醒<br>感叹悔言无尽<br>恨我不能说服自己<br>接受一切教训<br>让生命去等候<br>等候下一个漂流<br>让生命去等候<br>等候下一个伤口-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-modal am-modal-prompt Font_Optima" tabindex="-1" id="my-prompt">
+            <div class="am-modal-dialog">
+                <div class="am-modal-hd">Add New Event</div>
+                <div class="am-modal-bd">
+                    Don't Add Here !
+                    <ul class="am-avg-lg-2">
+                        <li>Title:</li>
+                        <li><input type="text" class="am-modal-prompt-input" placeholder="Event"></li>
+                    </ul>
+                    <ul class="am-avg-lg-2">
+                        <li>Start Time :</li>
+                        <li><input type="text" class="am-modal-prompt-input" id="Start_input" placeholder="Starts"></li>
+                    </ul>
+                    <ul class="am-avg-lg-2">
+                        <li>End Time :</li>
+                        <li><input type="text" class="am-modal-prompt-input" id="End_input" placeholder="Ends"></li>
+                    </ul>
+                    <input type="text" class="am-modal-prompt-input Note_picker" placeholder="Add Notes">
+                </div>
+                <div class="am-modal-footer">
+                    <span class="am-modal-btn" data-am-modal-cancel>Cancel</span>
+                    <span class="am-modal-btn" data-am-modal-confirm>Submit</span>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="assets/js/Festival.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+        <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+        <script src="assets/js/amazeui.min.js"></script>
+    </body>
+</html>

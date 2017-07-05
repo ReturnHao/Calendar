@@ -1,0 +1,198 @@
+/* Write your styles */
+@font-face {
+    font-family: 'Optima';
+    src: url('../../Source/Fonts/Optima.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apple Chancery';
+    src: url('../../Source/Fonts/Apple Chancery.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tsukushi A Round Gothic';
+    src: url('../../Source/Fonts/TsukushiAMaruGothic.ttc');
+    font-style: normal;
+}
+
+#Topbar_Title{
+    width: 120px;
+
+    font-size: 25px;
+}
+
+#Topbar_Date_Wrapper{
+    width: 50px;
+}
+
+.Font_Optima {
+    font-family: "Optima";
+    font-weight: lighter;
+}
+
+.Font_Apple_Chancery {
+    font-family: "Apple Chancery";
+    font-size: 18px;
+    color: #fff;
+}
+
+.Font_Tsukushi_A_Round_Gothic {
+    font-family: "Tsukushi A Round Gothic";
+    font-weight: 500;
+}
+
+.Calendar_Wrapper{
+    background: url('../../Source/Image/Background.png') no-repeat;
+    -webkit-background-size: auto;
+    background-size: 100%; overflow: hidden;
+    /*opacity: 0.6;*/
+
+    height: 900px;
+
+    color: #fff;
+    text-align: center;
+    user-select:none;
+}
+
+#Month_Container {
+    background: url('../../Source/Image/Single.png') no-repeat;
+    -webkit-background-size: auto;
+    background-size: contain; overflow: hidden;
+    opacity: 0.9;
+
+    margin: 7% auto;
+    height: 80%;
+}
+
+.Boxes_Wrapper {
+    margin: 5% auto;
+    height: 100%;
+    width: 100%;
+}
+
+.Boxes_Wrapper .box {
+    background: url('../../Source/Image/Frame.png') no-repeat;
+    -webkit-background-size: auto;
+    background-size: 100%; overflow: hidden;
+    opacity: 0.9;
+
+    margin-left: 1%;
+    height: 24%; /*Mac Os*/
+    /*height: 29%; !*Alien Ware*!*/
+    width: 24%;
+
+    font-family: "Apple Chancery";
+    font-size: 28px;
+    color: #000;
+    line-height: 150px;
+    font-weight: 500;
+
+    transition: all .2s ease;
+}
+
+.Boxes_Wrapper .box:hover {
+    font-size: 200%;
+    transform: rotate(360deg);
+}
+
+.Calendar_Body {
+    height: 100%;
+}
+
+.Status_Body {
+    background: rgba(0, 0, 0, 0.7);
+
+    height: 100%;
+
+    text-align: left;
+}
+
+.Font_Input {
+    margin-top: 28px;
+
+    font-size: 30px;
+    line-height: 44px;
+}
+
+.Month_Header {
+    padding-top: 3%;
+
+    font-family: "Edwardian Script ITC";
+    font-size: 60px;
+    color: #000;
+    font-weight: 500;
+}
+
+#Month_Wrapper {
+    margin-left: 5%;
+
+    height: 80%;
+    width: 90%; /*Mac Os*/
+    /*width: 80%; !*Alien Ware*!*/
+}
+
+#Month_Wrapper .Day_name, .Day{
+    margin-top: 2%;
+
+    height: 8%;
+
+    color: #000;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+#Month_Wrapper .selected {
+    background: url('../../Source/Image/Date_Frame_0.png') no-repeat center center;
+    -webkit-background-size: auto;
+    background-size: contain; overflow: hidden;
+    text-align: center;
+}
+
+#Events_List {
+    padding-top: 10%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+
+    height: 15%;
+}
+
+#Total_Event {
+    margin-left: -5%;
+
+    font-size: 22px;
+     /*height: 100%;*/
+}
+
+#Submitter {
+
+    font-size: 22px;
+}
+
+#Tabs_Wrapper {
+
+    opacity: 0.9;
+    text-align: center;
+}
+
+.am-tabs-bd {
+
+    border: 0;
+    opacity: 0.95;
+
+    /*font-family: "Menlo";*/
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.Info_Header, .Event_Header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+}
+
+.Note_picker {
+    width: 90%;
+    height: 200px;
+    text-align: center;
+}
